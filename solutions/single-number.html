@@ -1,0 +1,39 @@
+<html>
+                    <head>
+                        <title>Danilo's Leetcode Solutions</title>
+                        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+                    </head>
+                    <body style="padding:3em;">
+                    <h2><a href="../index.html">Go Back</a></h2>
+                    <br>
+                    <br>
+                    <pre><code class="javascript">/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var singleNumber = function(nums) {
+    var once = [];
+    var twice = [];
+    
+    for (var i in nums) {
+        if (once.includes(nums[i])) {
+            twice.push(nums[i]);
+        } else {
+            once.push(nums[i]);
+        }
+        
+        if (once.includes(nums[i]) && twice.includes(nums[i])) {
+            once = once.filter(e => e != nums[i]);
+        }
+    }
+    
+    return once[0];
+};
+</pre></code>
+                        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                        <link rel="stylesheet"
+                            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/default.min.css">
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
+                        <script>hljs.initHighlightingOnLoad();</script>
+                    </body>
+                </html>

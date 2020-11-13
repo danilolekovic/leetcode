@@ -1,0 +1,48 @@
+<html>
+                    <head>
+                        <title>Danilo's Leetcode Solutions</title>
+                        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+                    </head>
+                    <body style="padding:3em;">
+                    <h2><a href="../index.html">Go Back</a></h2>
+                    <br>
+                    <br>
+                    <pre><code class="c">class Solution {
+public:
+    bool isHappy(int n) {
+        int result = 0;
+        int num = 0;
+        int c = 0;
+    
+        while (result != 1) {
+            result = 0;
+            
+            while (n) {
+                num = n % 10;
+                result = result + num * num;
+                n = n / 10;
+            }
+            
+            n = result;
+            c++;
+            
+            if (c > 100) {
+                return false;
+            }
+        }
+        
+        if (result == 1) {
+            return true;
+        }
+        
+        return false;
+    }
+};
+</pre></code>
+                        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                        <link rel="stylesheet"
+                            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/default.min.css">
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
+                        <script>hljs.initHighlightingOnLoad();</script>
+                    </body>
+                </html>
