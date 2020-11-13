@@ -1,0 +1,26 @@
+<html>
+                    <head>
+                        <title>Danilo's Leetcode Solutions</title>
+                        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+                    </head>
+                    <body style="padding:3em;">
+                    <h2><a href="../index.html">Go Back</a></h2>
+                    <br>
+                    <br>
+                    <pre><code class="mysql"># Write your MySQL query statement below
+select Email from
+(
+  select Email, count(Email) as num
+  from Person
+  group by Email
+) as statistic
+where num > 1
+;
+</pre></code>
+                        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                        <link rel="stylesheet"
+                            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/default.min.css">
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
+                        <script>hljs.initHighlightingOnLoad();</script>
+                    </body>
+                </html>
