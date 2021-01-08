@@ -1,0 +1,32 @@
+<html>
+                    <head>
+                        <title>Danilo's Leetcode Solutions</title>
+                        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+                    </head>
+                    <body style="padding:3em;">
+                    <h2><a href="../index.html">Go Back</a></h2>
+                    <br>
+                    <br>
+                    <pre><code class="java">class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        if (strs.length == 0) return "";
+        String prefix = strs[0];
+        
+        for (int i = 1; i < strs.length; i++) {
+            while (strs[i].indexOf(prefix) != 0) {
+                prefix = prefix.substring(0, prefix.length() - 1);
+                if (prefix.isEmpty()) return "";
+            }
+        }
+        
+        return prefix;
+    }
+}
+</pre></code>
+                        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                        <link rel="stylesheet"
+                            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/default.min.css">
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
+                        <script>hljs.initHighlightingOnLoad();</script>
+                    </body>
+                </html>

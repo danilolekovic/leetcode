@@ -15,16 +15,16 @@ var htmlCode = `<html>
         </head>
         <body style="padding:3em;">
             <h2>Danilo's Leetcode Solutions</h2>
-            <ul>`;
+            <ul>\n`;
 
 for (dir in dirs) {
     if (dirs[dir] != ".git" && dirs[dir] != "solutions") {
         htmlCode +=
-          '<li><a href="./solutions/' +
+          '\t\t\t\t<li><a href="./solutions/' +
           dirs[dir] +
           '.html">' +
           dirs[dir] +
-          "</a></li>";
+          "</a></li>\n";
     }
 
     readdirSync(dirs[dir], "utf8").forEach((file) => {

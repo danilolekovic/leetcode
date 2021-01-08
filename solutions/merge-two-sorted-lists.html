@@ -1,0 +1,57 @@
+<html>
+                    <head>
+                        <title>Danilo's Leetcode Solutions</title>
+                        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+                    </head>
+                    <body style="padding:3em;">
+                    <h2><a href="../index.html">Go Back</a></h2>
+                    <br>
+                    <br>
+                    <pre><code class="java">/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        ListNode tempNode = new ListNode(0);
+        ListNode currentNode = tempNode;
+        
+        while (l1 != null && l2 != null) {
+            if (l1.val < l2.val) {
+                currentNode.next = l1;
+                l1 = l1.next;
+            } else {
+                currentNode.next = l2;
+                l2 = l2.next;
+            }
+            
+            currentNode = currentNode.next;
+        }
+        
+        if (l1 != null) {
+            currentNode.next = l1;
+            l1 = l1.next;
+        }
+        
+        if (l2 != null) {
+            currentNode.next = l2;
+            l2 = l2.next;
+        }
+        
+        return tempNode.next;
+    }
+}
+</pre></code>
+                        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                        <link rel="stylesheet"
+                            href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/default.min.css">
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js"></script>
+                        <script>hljs.initHighlightingOnLoad();</script>
+                    </body>
+                </html>
