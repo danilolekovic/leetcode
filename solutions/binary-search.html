@@ -9,19 +9,29 @@
                     <br>
                     <pre><code class="c">class Solution {
 public:
-    int maxProfit(vector<int>& prices) {
-        int max = 0;
-        int min = *max_element(prices.begin(), prices.end());
+    int search(vector<int>& nums, int target) {
+        int min = 0;
+        int max = nums.size() - 1;
         
-        for (int i = 0; i < prices.size(); i++) {
-            if (prices[i] < min) {
-                min = prices[i];
+        int guess = (max + min) / 2;
+        
+        if (nums[guess] == target) return guess;
+        if (max < min) return -1;
+        
+        while (nums[guess] != target) {
+            if (nums[guess] < target) {
+                min = guess + 1;
+                guess = (max + min) / 2;
             } else {
-                max = max > prices[i] - min ? max : prices[i] - min;
+                max = guess - 1;
+                guess = (max + min) / 2;
             }
+            
+            if (nums[guess] == target) break;
+            if (max < min) return -1;
         }
         
-        return max;
+        return guess;
     }
 };
 </pre></code>

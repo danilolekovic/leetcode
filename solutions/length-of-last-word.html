@@ -7,14 +7,29 @@
                     <h2><a href="../index.html">Go Back</a></h2>
                     <br>
                     <br>
-                    <pre><code class="javascript">/**
- * @param {string} s
- * @return {number}
- */
-var lengthOfLastWord = function(s) {
-    var words = s.trim().split(" ");
+                    <pre><code class="c">class Solution {
+public:
+    int lengthOfLastWord(string s) {
+        s.erase(0, s.find_first_not_of(" \t"));
+        s.erase(s.find_last_not_of(" \t") + 1);
         
-    return words[words.length - 1].length;
+        if (s == "")
+            return 0;
+        
+        string lastWord = "";
+        
+        for (int i = 0; i < s.length(); i++) {
+            
+            if (s[i] == ' ' && i + 1 != s.length())
+                lastWord = "";
+            else
+                lastWord += s[i];
+            
+        }
+        
+        
+        return lastWord.length();
+    }
 };
 </pre></code>
                         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
